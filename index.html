@@ -274,6 +274,7 @@ Gestion du DNS : GANDI + BIND
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
 				// parallaxBackgroundSize: '2100px 900px',
+multiplex: {"secret":"14274248360494976413","socketId":"e6e7925881b701ec", url: "localhost:1948"},
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
@@ -283,7 +284,10 @@ Gestion du DNS : GANDI + BIND
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/remotes/remotes.js', async: true },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js', async: true },
+        { src: 'plugin/multiplex/client.js', async: true }
+
 				]
 			});
 
