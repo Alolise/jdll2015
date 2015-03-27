@@ -268,7 +268,7 @@ Gestion du DNS : GANDI + BIND
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-				multiplex: {"secret":"14274558594661462355","socketId":"2584961a489a6385",url:"http://www.rachetjay.fr:1948/"},
+//				multiplex: {"secret":"14274558594661462355","socketId":"2584961a489a6385",url:"http://www.rachetjay.fr:1948/"},
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
 				// parallaxBackgroundSize: '2100px 900px',
@@ -281,9 +281,6 @@ Gestion du DNS : GANDI + BIND
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-        { src: 'https://cdn.socket.io/socket.io-1.3.4.js', async: true },
-        { src: 'plugin/multiplex/master.js', async: true },
-{ src: 'plugin/notes-server/client.js', async: true },
 				]
 			});
 
@@ -294,5 +291,11 @@ Gestion du DNS : GANDI + BIND
 { src: 'plugin/remotes/remotes.js', async: true },
         { src: 'http://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js', async: true },
         { src: 'plugin/multiplex/client.js', async: true } 
+
+-Devrait fonctionner
+        { src: 'https://cdn.socket.io/socket.io-1.3.4.js', async: true },
+        { src: 'plugin/multiplex/master.js', async: true },
+{ src: 'plugin/notes-server/client.js', async: true },
+
 -->
 </html>
