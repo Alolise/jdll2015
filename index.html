@@ -43,27 +43,38 @@
 					<h2>Les services Internet de l'association Alolise</h2>
 					<h5>Association pour la promotion des LOgiciels LIbres région StÉphanoise</h5>
 					<p>
-					<small>Cette présentation suit scrupulesement les principes de la méthodologie de <a href="http://www.byatoo.com/la-rache/">La RACHE</a> <br/>/<br/> Création commencée la veille vers 23h00</small>
+					<small>Cette présentation suit scrupuleusement les principes de la méthodologie de <a href="http://www.byatoo.com/la-rache/">La RACHE</a> <br/>/<br/> Création commencée la veille vers 23h00</small>
 					</p>
-					<p>reveal.js powa</p>
+					<p><a href="https://help.riseup.net/">reveal.js</a> powa</p>
 				</section>
 
 				<section>
 					<h2>Présentation et Historique</h2>
 					<ul>
-						<li class="fragment">2005 - Création de l'association ALOLISE ( mails perso )</li>
-						<li class="fragment">2007 - Création d'une mailing liste riseup + boite contact riseup</li>
-						<li class="fragment">2010 - Réflexion sur l'opportunité d'avoir notre propre système de messagerie</li>
-						<li class="fragment">2011 - Crépage de chignon sur l'intérêt d'avoir smtp/imap + xmpp ou seulement xmpp</li>
+						<li class="fragment">2005 - Création de l'association ALOLISE</li>
+						<li class="fragment">2007 - Création d'une mailing liste + boite contact 
+						</li>
+						<ul>
+						<li class="fragment">
+						Merci <a href="https://help.riseup.net/">riseup</a> !
+						</li>
+					</ul>
+						<li class="fragment">2010 - Réflexion sur l'opportunité d'<u>autohéberger</u> notre propre messagerie</li>
+						<li class="fragment">2011 - intérêt d'avoir smtp/imap/xmpp <br/><span class="fragment">ou seulement xmpp<span></li>
 						<li class="fragment"> Procrastination Powa ! </li>
 					</ul>
+					<aside class="notes">
+BOITE MAIL PERSO<br/>
+PAS DE LOCAL <br/>
+PAS DE CONNEXION INTERNET<br/>
+					</aside>
 				</section>
 
 				<section>
 					<h2>Présentation et Historique</h2>
 					<ul>
 						<li class="fragment">2012 - création d'un serveur avec smtp/imap + xmpp centralisé sur une authentification LDAP</li>
-						<li class="fragment">2013 - création d'une mailing liste ( sympa )</li>
+						<li class="fragment">2013 - création d'une mailing liste (sympa)</li>
 						<ul>
 						<li class="fragment">ajout d'un anti spam basé sur amavisd couplé à clamav et spamassassin</li>
 						</ul>
@@ -71,12 +82,14 @@
 						<li class="fragment">2014 - 2015 - utilisation à minima + début de la virtualisation</li>
 					</ul>
 					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+CREATION CLE USB LIVE COLLEGE CONSEIL GENERAL : SUBVENTION <br/>
+LOCAL RADIOAMATEUR : DEAL LOCAUX CONTRE WIFI<br/>
+LOCATION CONNEXION INTERNET + ACHAT D'UN MINIPC = SITE WEB PUIS SERVICES<br/>
 					</aside>
 				</section>
 
 				<section>
-					<h2>Technique et solutions logiciels</h2>
+					<h2>Partie technique</h2>
 					<ul>
 <li class="fragment">
 Création d'un serveur LDAP : OPENLDAP
@@ -85,33 +98,45 @@ Création d'un serveur LDAP : OPENLDAP
 <li class="fragment">
 C'est l'annuaire central, tout les services doivent être compatible LDAP (c'est parfois galère)
 </li>
+<br/>
 </ul>
 <li class="fragment">
 Gestion de ce serveur en utilisant FUSION-DIRECTORY
 <ul>
 <li class="fragment">
-	Le top pour simplifier la gestion des membres (CRUD), ça permet de créer des templates de membres, des groupes...
+	Le top pour simplifier la gestion des membres
+<ul>
+<li class="fragment"> 
+Create Read Update Delete (CRUD), 
 </li>
+<li class="fragment"> 
+Gestion des groupes,
+</li>
+<li class="fragment"> 
+Templates d'adhérents,
+</li>
+<li class="fragment"> 
+Alias de messagerie, message d'absence, etc...
+</li>
+</ul>
 <li class="fragment">
 	C'est l'outil idéal, simple et efficace.
 </li>
 </ul>
 </ul>
 					<aside class="notes">
-Création d'un serveur LDAP : OPENLDAP
-	C'est l'annuaire central, tout les services doivent être compatible LDAP (c'est parfois galère)
-
-Gestion de ce serveur en utilisant FUSION-DIRECTORY
-	Le top pour simplifier la gestion des membres (CRUD), ça permet de créer des templates de membres, des groupes...
-	C'est l'outil idéal, simple et efficace.
+Création d'un serveur LDAP : OPENLDAP<br/>
+C'est l'annuaire central, tout les services doivent être compatible LDAP (c'est parfois galère)<br/>
+FUSION-DIRECTORY : pour éviter format LDIF<br/>
+simplifier la gestion des membres (CRUD), templates de membres, des groupes...<br/>
 					</aside>
 				</section>
 
 				<section>
-					<h2>Technique et solutions logiciels</h2>
+					<h2>Partie technique</h2>
 					<ul>
 <li class="fragment">
-Création d'un serveur smtp : POSTFIX, protection amavis/clamav/spamassassin
+Création d'un serveur smtp : POSTFIX
 </li>
 <ul>
 <li class="fragment">
@@ -124,6 +149,18 @@ Création d'un serveur smtp : POSTFIX, protection amavis/clamav/spamassassin
 	Grâces soient rendues à postmap 
 </li>
 </ul>
+					<aside class="notes">
+Création d'un serveur smtp : POSTFIX, protection amavis/clamav/spamassassin<br/>
+	Le grand débat Postfix/Exim a eu lieu je vous rassure, <br/>
+	le gagnant a été celui qui permet de tester la configuration en cours de création<br/>
+	Grâces soient rendues à postmap <br/>
+<br/>
+					</aside>
+				</section>
+
+				<section>
+					<h2>Partie technique</h2>
+					<ul>
 <li class="fragment">
 Création d'un serveur IMAP / MDA / SIEVE : DOVECOT
 </li>
@@ -132,30 +169,25 @@ Création d'un serveur IMAP / MDA / SIEVE : DOVECOT
 	Le choix de dovecot est évident, relativement bien préconfiguré, très bien intégré avec postfix
 </li>
 <li class="fragment">
-	Simple à configurer (une fois qu'on a bien lu la doc...), il semble que ce soit aussi la référence (d'après le nombre de forum)
+	Simple à configurer (une fois qu'on a bien lu la doc...), il semble que ce soit une référence (d'après le nombre de forums)
 </li>
 <li class="fragment">
-	La possibilité d'avoir IMAP/MDA et SIEVE aussi simplement.
+	La possibilité d'avoir IMAP, MDA et SIEVE aussi simplement.
 </li>
 </ul>
 </ul>
 
 					<aside class="notes">
-Création d'un serveur smtp : POSTFIX, protection amavis/clamav/spamassassin
-	Le grand débat Postfix/Exim a eu lieu je vous rassure, 
-	le gagnant a été celui qui permet de tester la configuration en cours de création
-	Grâces soient rendues à postmap 
-
-Création d'un serveur IMAP / MDA / SIEVE : DOVECOT
-	Le choix de dovecot est évident, relativement bien préconfiguré, très bien intégré avec postfix
-	Simple à configurer (une fois qu'on a bien lu la doc...), il semble que ce soit aussi la référence (d'après le nombre de forum)
+Création d'un serveur IMAP / MDA / SIEVE : DOVECOT<br/>
+	Le choix de dovecot est évident, relativement bien préconfiguré, très bien intégré avec postfix<br/>
+	Simple à configurer (une fois qu'on a bien lu la doc...), il semble que ce soit aussi la référence (d'après le nombre de forum)<br/>
 	La possibilité d'avoir IMAP/MDA et SIEVE aussi simplement.
 
 					</aside>
 				</section>
 
 				<section>
-					<h2>Technique et solutions logiciels</h2>
+					<h2>Partie technique</h2>
 					<ul>
 <li class="fragment">
 Webmail : ROUNDCUBE
@@ -172,14 +204,80 @@ Webmail : ROUNDCUBE
 
 					<aside class="notes">
 
-Webmail : ROUNDCUBE
-	Beau, simple, en plein développement, intégration d'xmpp, c'est le top.
+Webmail : ROUNDCUBE<br/>
+	Beau, simple, en plein développement, intégration d'xmpp, c'est le top.<br/>
 	L'installation se fait en un clin d'œil
 					</aside>
 				</section>
+				<section>
+					<h2>Partie technique</h2>
+					<ul>
+<li class="fragment">
+Listes de diffusion : SYMPA
+</li>
+<ul>
+<li class="fragment">
+Pas terrible ...	
+</li>
+<li class="fragment">
+	L'installation est longue, la configuration complexe
+</li>
+<li class="fragment">
+	L'interface n'est plus très fraiche... Pas trouvé d'alternative viable...
+</li>
+<li class="fragment">
+	Par contre une fois en place, se fait oublier...
+</li>
+</ul>
+</ul>
+
+					<aside class="notes">
+					</aside>
+
+				</section>
+				<section>
+					<h2>Partie technique</h2>
+					<ul>
+<li class="fragment">
+Sécurité et antispam : AMAVIS/SPAMASSASSIN/CLAMAV
+</li>
+<ul>
+<li class="fragment">
+Très simple, un pipe de postfix vers amavis et c'est tout
+</li>
+<li class="fragment">
+	L'installation est simple, la configuration se fait rapidement
+</li>
+<li class="fragment">
+	Il faut bien définir sa politique de gestion des SPAMS !<br/>
+</li>
+<ul>
+<li class="fragment">
+Les POSITIFS vont dans un dossier imap SPAM, 
+</li>
+<li class="fragment">
+l'utilisateur marque comme lus les vrais positifs
+</li>
+<li class="fragment">
+et déplace les faux positifs.<br/>
+</li>
+<li class="fragment">
+Cron faire tourner salearn sur le dossier SPAM : 
+</li>
+<li class="fragment">
+Les mails lus sont appris comme spam et détruits
+</li>
+</ul>
+</ul>
+</ul>
+
+					<aside class="notes">
+					</aside>
+
+				</section>
 
 				<section>
-					<h2>Technique et solutions logiciels</h2>
+					<h2>Partie technique</h2>
 					<ul>
 
 <li class="fragment">
@@ -205,14 +303,14 @@ Création d'un serveur XMPP : OpenFIRE
 </ul>
 
 					<aside class="notes">
-Création d'un serveur XMPP : OpenFIRE
-	Je déteste JAVA, c'est une longue histoire, parsemé de developpeurs débutants, de projets open-source qui se configure avec de l'XML et de debuggage avec strace.
+Création d'un serveur XMPP : OpenFIRE<br/>
+	Je déteste JAVA, c'est une longue histoire, parsemé de developpeurs débutants, de projets open-source qui se configure avec de l'XML et de debuggage avec strace.<br/>
 	Mais je dois reconnaitre que OpenFire est un beau projet, simple et efficace, le seul bémol c'est la gestion ALAJAVA™ des certificats SSL.
 					</aside>
 				</section>
 
 				<section>
-					<h2>Technique et solutions logiciels</h2>
+					<h2>Partie technique</h2>
 					<ul>
 
 <li class="fragment">
@@ -232,13 +330,122 @@ Gestion du DNS : GANDI + BIND
 </ul>
 
 					<aside class="notes">
-Gestion du DNS : GANDI + BIND
-	Gandi c'est historique, c'est juste notre REGISTRAR, le DNS principal c'est notre serveur bind.
-	Bind c'est une école à maîtriser, c'est comme la table de multiplication, une fois qu'on le sait ça roule tout seule.
+Gestion du DNS : GANDI + BIND<br/>
+	Gandi c'est historique, c'est juste notre REGISTRAR, le DNS principal c'est notre serveur bind.<br/>
+	Bind c'est une école à maîtriser, c'est comme la table de multiplication, une fois qu'on le sait ça roule tout seule.<br/>
 	Et puis ça reste la référence.
 					</aside>
 				</section>
+				<section>
+					<h2>Sécurité</h2>
+					<ul>
 
+<li class="fragment">
+TLS 
+<ul>
+<li class="fragment">
+Nous disposons de notre propre Certifiat d'Autorité : Un simple self-signed. 
+</li>
+<li class="fragment">
+Il est disponible sur notre site web, et il suffit de l'installer sur les outils client pour que tout les services soient reconnues.
+</li>
+<li class="fragment">
+C'est une solution à la fois économique et formatrice ;)
+</li>
+</ul>
+</ul>
+<aside class="notes">
+TLS <br/>
+Nous disposons de notre propre Certifiat d'Autorité : Un simple self-signed. <br/>
+Il est disponible sur notre site web, et il suffit de l'installer sur les outils client pour que tout les services soient reconnues.<br/>
+C'est une solution à la fois économique et formatrice ;)
+</aside>
+				</section>
+				<section>
+					<h2>Coté utilisateurs</h2>
+<ul>
+<li class="fragment">
+Ne riez pas ... 
+</li>
+<li class="fragment">
+C'est un désastre ...
+</li>
+<li class="fragment">
+Très peu d'adhérents utilisent nos services (mail/xmpp/ldap) ...
+</li>
+<li class="fragment">
+Les causes ?
+</li>
+<ul>
+<li class="fragment">
+Redondant avec leurs messageries initiales
+</li>
+<li class="fragment">
+Jugé complexe,
+</li>
+<li class="fragment">
+Manque de confiance, quelques ratés au début
+</li>
+<li class="fragment">
+XMPP très peu utilisé même par les UBERGEEKS ©
+</li>
+<li class="fragment">
+Manque d'intérêt général : "J'ai mon Yahoo/Gmail/LaPoste, c'est déjà assez compliqué..."
+</li>
+</ul>
+</ul>
+<aside class="notes">
+Ne riez pas ... <br/>
+C'est un désastre ...<br/>
+Très peu d'adhérents utilisent nos services (mail/xmpp/ldap) ...<br/>
+Les causes ?<br/>
+Redondant avec leurs messageries initiales<br/>
+Jugé complexe, souvent parce qu'on explique les rouages arrières ...<br/>
+Manque de confiance, car il y a eu quelques ratés dans les débuts (pb config, MAJ impromptues, etc...)<br/>
+XMPP très peu utilisé même par les UBERGEEKS ©<br/>
+Manque d'intérêt général : "J'ai mon Yahoo/Gmail/LaPoste, c'est déjà assez compliqué..."<br/>
+</aside>
+				</section>
+				<section>
+					<h2>Projets futurs</h2>
+<ul>
+<li class="fragment">
+En cours
+</li>
+<ul>
+<li class="fragment">
+Changement de machine : passage d'un minipc à un serveur lame plus puissant
+</li>
+<li class="fragment">
+Passage à la virtualisation : <br/>
+	Gestion Proxmox<br/>
+	Container LXC<br/>
+</ul>
+<aside class="notes">
+</aside>
+				</section>
+				<section>
+					<h2>Projets futurs</h2>
+<ul>
+</li>
+<li class="fragment">
+En projets
+</li>
+<ul>
+<li class="fragment">
+Offrir aux adhérents un espace cloud (ownCloud/Seafile) avec 5 à 10Go d'espace.
+</li>
+<li class="fragment">
+Idéalement offrir également la possibilité de créer son espace de developpement web, via des containers.
+</li>
+<li class="fragment">
+Pouvoir offrir des services web + mail + xmpp + LDAP à d'autres petites associations. Contre une adhésion.
+</li>
+</ul>
+</ul>
+
+
+				</section>
 				<section>
 					<h1>La FIN ?</h1>
 					<h1 class="fragment">Vos questions !</h1>
